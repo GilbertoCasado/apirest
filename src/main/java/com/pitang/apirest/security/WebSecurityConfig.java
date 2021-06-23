@@ -22,12 +22,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers(HttpMethod.POST, "/api/Cars").authenticated()
 		.anyRequest().authenticated();	
 	}
-	
+	//to - do: aplicar filtro para  verificar  se ususario   tem token ativo 
 	
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception{
-		web.ignoring().antMatchers("/h2-console/**", "/api/Users/**");
+		web.ignoring().antMatchers("/h2-console/**", "/api/Users/**", "/**");
 		
 	}
 	
